@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الصفحة الرئيسية</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f4f4f4;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin: -5px 0;
+            font-weight: bold;
+            line-height: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: linear-gradient(to bottom, #07BEEA 50%, #FFFFFF 50%);
+            color: white;
+            padding: 10px;
+            width: 100vw;
+            box-sizing: border-box;
+            position: fixed;
+            top: 0;
+        }
+
+        h1 span {
+            text-align: center;
+            color: black;
+            width: 100%;
+            transform: translateX(50px);
+        }
+
+        h2 {
+            margin-top: 160px; /* ضبط المسافة لتناسب العنوان الرئيسي */
+            font-size: 24px;
+            color: #333;
+            text-align: center;
+        }
+
+        .link-boxes {
+            text-align: center;
+            position: absolute;
+            top: 200px; /* زيادة المسافة من أعلى الصفحة */
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            width: 100%;
+        }
+
+        .link-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            width: 80px;
+            height: 80px;
+            background-color: #fff;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+            cursor: pointer; /* تغيير شكل المؤشر عند المرور فوق الزر */
+        }
+
+        .link-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .link-box a {
+            color: inherit; /* استخدام نفس لون النص */
+            font-size: 24px;
+            text-align: center; /* توسيط النص داخل الرابط */
+            display: flex; /* جعل الرابط عنصر مرن */
+            flex-direction: column; /* تكديس الأيقونة والنص عمودياً */
+            align-items: center; /* توسيط المحتوى */
+            width: 100%; /* عرض كامل */
+            height: 100%; /* ارتفاع كامل */
+            text-decoration: none; /* إزالة الخط تحت النص */
+            outline: none; /* إزالة التأثير الأزرق عند الضغط */
+        }
+
+        .link-box p {
+            margin: 5px 0 0;
+            font-size: 12px;
+            color: #333;
+        }
+
+        /* ألوان الأيقونات الحقيقية */
+        .link-box a.pinterest { color: #E60023; } /* لون Pinterest (أحمر) */
+        .link-box a.youtube { color: #FF0000; } /* لون يوتيوب (أحمر) */
+        .link-box a.google-news { color: #DB4437; } /* لون Google News (أحمر) */
+
+        .social-icons {
+            margin-top: 20px; /* مسافة فوق الأيقونات */
+            text-align: center; /* توسيط الأيقونات */
+            position: absolute; /* لجعلها في الأسفل */
+            bottom: 70px; /* رفع الأيقونات قليلاً */
+            width: 100%; /* عرض كامل */
+            transition: opacity 0.3s; /* تأثير عند تغيير الشفافية */
+        }
+
+        .social-icons a {
+            margin: 0 10px; /* تقليل المسافة بين الأيقونات */
+            font-size: 24px; /* حجم الأيقونات */
+            text-decoration: none; /* إزالة أي خط تحت النص */
+        }
+
+        .social-icons a.youtube { color: #FF0000; } /* لون يوتيوب (أحمر) */
+        .social-icons a.telegram { color: #0088CC; } /* لون تلغرام (أزرق) */
+
+        .buy-coffee {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .buy-coffee img {
+            max-width: 150px;
+        }
+
+        .hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Melion<span>Tech</span></h1>
+    
+    <h2>Convert To RSS</h2> <!-- إضافة العنوان الجديد كنص فوق المربعات -->
+
+    <div class="link-boxes">
+        <div class="link-box" onclick="window.open('https://meliontech.github.io/Pinterss/', '_blank')">
+            <a class="pinterest">
+                <i class="fab fa-pinterest"></i>
+                <p>Pinterest</p>
+            </a>
+        </div>
+        <div class="link-box" onclick="window.open('https://meliontech.github.io/YouTuberss/', '_blank')">
+            <a class="youtube">
+                <i class="fab fa-youtube"></i>
+                <p>YouTube</p>
+            </a>
+        </div>
+        <div class="link-box" onclick="window.open('https://meliontech.github.io/GNewRss/', '_blank')">
+            <a class="google-news">
+                <i class="fab fa-google"></i>
+                <p>Google News</p>
+            </a>
+        </div>
+    </div>
+
+    <div class="social-icons">
+        <a href="https://www.youtube.com/@meliontech" target="_blank" class="youtube">
+            <i class="fab fa-youtube"></i>
+        </a>
+        <a href="https://t.me/MelionTech" target="_blank" class="telegram">
+            <i class="fab fa-telegram"></i>
+        </a>
+    </div>
+
+    <a href="https://www.buymeacoffee.com/" target="_blank" class="buy-coffee">
+        <img src="https://i.imgur.com/N40uXXP_d.webp?maxwidth=760&fidelity=grand" alt="Buy me a coffee">
+    </a>
+
+    <script>
+        let lastHeight = window.innerHeight;
+
+        window.addEventListener('resize', () => {
+            if (window.innerHeight < lastHeight) {
+                document.querySelector('.social-icons').classList.add('hidden');
+                document.querySelector('.buy-coffee').classList.add('hidden');
+            } else {
+                document.querySelector('.social-icons').classList.remove('hidden');
+                document.querySelector('.buy-coffee').classList.remove('hidden');
+            }
+            lastHeight = window.innerHeight;
+        });
+    </script>
+</body>
+</html>
